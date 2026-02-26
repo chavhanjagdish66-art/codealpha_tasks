@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Login</title>
-</head>
-
-<body style="font-family:Arial;text-align:center;margin-top:100px">
-
-<h2>Login Page</h2>
+<h2>Login</h2>
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button style="padding:10px 20px;background:orange;border:none;color:white">Login</button>
+    <button type="submit">Login</button>
 </form>
-
-</body>
-</html>
