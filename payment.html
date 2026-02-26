@@ -1,0 +1,25 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<div class="pay-box">
+
+    <h2>UPI Payment</h2>
+
+    <img src="{{ p.image }}" width="180">
+
+    <h3>{{ p.name }}</h3>
+    <h2 style="color:rgb(39, 67, 207);">₹{{ p.price }}</h2>
+
+    <p>Enter  UPI ID</p>
+
+    <form action="{% url 'success' p.id %}">
+        <input placeholder="example@upi" required
+        style="padding:8px;width:70%;border:1px solid #c93f3f;border-radius:6px;">
+
+        <br><br>
+        <button class="btn buy">Pay Now</button>
+    </form>
+
+</div>
+
+{% endblock %}

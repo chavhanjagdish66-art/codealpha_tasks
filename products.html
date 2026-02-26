@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<div class="wrap">
+{% for p in products %}
+
+<div class="card">
+
+    <img src="{{ p.image }}" class="img">
+
+    <h3>{{ p.name }}</h3>
+    <p>₹{{ p.price }}</p>
+
+    <a href="{% url 'detail' p.id %}" class="btn">View</a>
+    <a href="{% url 'add' p.id %}" class="btn add">Add</a>
+
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

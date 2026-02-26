@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Shop</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="header">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+
+        <!-- ☰ MENU -->
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <h2 class="logo">My Shop</h2>
+
+        <!-- CART -->
+        <a href="/cart" class="cart-icon">
+            🛒
+            <span class="badge">{{ request.session.cart|length }}</span>
+        </a>
+
+    </div>
+
+    <!-- ⭐ AMAZON STYLE SEARCH -->
+    <div class="search-bar">
+        <form action="/" method="get">
+            <input type="text" name="q" placeholder="Search products...">
+            <button>🔍</button>
+        </form>
+    </div>
+
+    <!-- HOME CART -->
+    <div class="sub-nav">
+        <a href="/">Home</a>
+        <a href="/cart">Cart</a>
+    </div>
+
+</div>
+
+
+
+</div>
+
+<!-- SIDE MENU -->
+<div id="menu" class="menu-box">
+
+<a href="/">Home</a>
+<a href="/cart">Cart</a>
+<a href="/orders">Order History</a>
+
+{% if user.is_authenticated %}
+<a href="/accounts/logout/">Logout</a>
+{% else %}
+<a href="/signup/">Register</a>
+<a href="/accounts/login/">Login</a>
+{% endif %}
+
+</div>
+<div id="menu" class="menu-box">
+
+<a href="/">Home</a>
+<a href="/cart">Cart</a>
+<a href="/orders">Order History</a>
+
+{% if user.is_authenticated %}
+<a href="/accounts/logout/">Logout</a>
+{% else %}
+<a href="/signup/">Register</a>
+<a href="/accounts/login/">Login</a>
+{% endif %}
+
+</div>
+
+{% block content %}{% endblock %}
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

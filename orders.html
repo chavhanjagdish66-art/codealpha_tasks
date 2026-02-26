@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<h2 style="text-align:center">Payment History</h2>
+
+<div class="wrap">
+{% for o in orders %}
+
+<div class="card">
+    <img src="{{ o.product.image }}" class="img">
+    <h3>{{ o.product.name }}</h3>
+    <p>₹{{ o.product.price }}</p>
+    <small>{{ o.created }}</small>
+</div>
+
+{% empty %}
+<h3>No Orders Yet</h3>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<div class="pay-box">
+
+    <img src="{{ p.image }}" width="250">
+
+    <h2>{{ p.name }}</h2>
+    <h3>₹{{ p.price }}</h3>
+
+    <a href="{% url 'add' p.id %}" class="btn add">Add to Cart</a>
+    <a href="{% url 'buy' p.id %}" class="btn buy">Buy Now</a>
+
+</div>
+
+{% endblock %}

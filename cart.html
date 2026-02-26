@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<h2>Your Cart</h2>
+
+<div class="wrap">
+{% for i in items %}
+
+<div class="card">
+
+    <img src="{{ i.image }}" class="img">
+
+    <h3>{{ i.name }}</h3>
+    <p>₹{{ i.price }}</p>
+
+    <a href="{% url 'buy' i.id %}" class="btn buy">Buy</a>
+    <a href="{% url 'remove' i.id %}" class="btn remove">Remove</a>
+
+</div>
+
+{% empty %}
+<h3 style="text-align:center">buy now product </h3>
+{% endfor %}
+</div>
+
+{% endblock %}
